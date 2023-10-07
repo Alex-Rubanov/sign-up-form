@@ -6,4 +6,11 @@ Even though you could do validation even using just html5 and form attributes or
 
 Also I've added imitation of fetch request just to show the flow of this small app and a greeting message to infom user that your request was successfully fullfilled.
 
-[Demo of project](https://www.google.com)
+[**DEMO OF PROJECT**](https://alex-rubanov.github.io/sign-up-form/)
+
+<img src="https://res.cloudinary.com/dnolckuaa/image/upload/v1696711795/sign-up-01_tvs1se.png" />
+<img src="https://res.cloudinary.com/dnolckuaa/image/upload/v1696711795/sign-up-02_zjhktu.png" />
+<img src="https://res.cloudinary.com/dnolckuaa/image/upload/v1696711795/sign-up-03_aberg0.png" />
+<img src="https://res.cloudinary.com/dnolckuaa/image/upload/v1696711795/sign-up-04_p23fal.png" />
+<img src="https://res.cloudinary.com/dnolckuaa/image/upload/v1696711795/sign-up-05_mqjeot.png" />
+<img src="https://res.cloudinary.com/dnolckuaa/image/upload/v1696711795/sign-up-06_rkp4v8.png" />
