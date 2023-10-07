@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <form novalidate>
+      <h1>Sign up</h1>
+      <div>
+        <label for="name">First Name</label>
+        <input type="text" id="name" name="name" spellcheck="false" />
+        <p>First Name should consist of min 5 characters and max 15</p>
+      </div>
+      <div>
+        <label for="surname">Last Name</label>
+        <input type="text" id="surname" name="surname" spellcheck="false" />
+        <p>First Name should consist of min 5 characters and max 15</p>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="password" spellcheck="false" />
+        <p>Invalid email format</p>
+      </div>
+      <button class="sign-up" type="submit">Sign up</button>
+    </form>
+
+    <div class="modal">
+      <div class="message">
+        <p class="message-text"></p>
+        <div class="close-btn" tabindex="0"></div>
+        <button class="modal-btn">Ok</button>
+      </div>
+    </div>
+  </body>
+</html>

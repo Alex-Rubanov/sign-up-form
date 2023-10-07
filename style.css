@@ -1,0 +1,288 @@
+:root {
+  --main-color: rgb(173, 216, 230);
+  --secondary-color: rgb(255, 255, 255);
+  --tertiary-color: rgb(0, 0, 0);
+
+  --error-color: rgb(242 76 76);
+  --success-color: rgb(98, 189, 98);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  height: 100vh;
+  margin: 0;
+  padding: 0 5px;
+
+  font-family: Urbanist, sans-serif;
+
+  background-color: var(--main-color);
+}
+
+h1 {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  width: 400px;
+  padding: 40px 20px;
+
+  background-color: var(--secondary-color);
+  filter: blur(0.2px);
+  border-radius: 7px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
+}
+
+form div {
+  position: relative;
+}
+
+label {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+
+  margin-bottom: 5px;
+
+  font-size: 18px;
+  color: rgb(128 128 128 / 90%);
+
+  transition: 0.2s ease all;
+}
+
+label.active {
+  top: -15px;
+
+  display: inline-block;
+
+  padding: 5px 10px;
+
+  font-size: 14px;
+  color: var(--tertiary-color);
+
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+}
+
+form p {
+  margin: 5px 0 15px;
+  padding-left: 5px;
+
+  font-size: 14px;
+  color: var(--error-color);
+
+  opacity: 0;
+
+  transition: 0.2s ease all;
+}
+
+form p.error {
+  opacity: 1;
+}
+
+button {
+  align-self: end;
+
+  padding: 10px 15px;
+
+  color: var(--secondary-color);
+
+  background-color: var(--main-color);
+  caret-color: transparent;
+
+  transition: 0.2s ease transform;
+}
+
+form button {
+  cursor: pointer;
+
+  min-width: 150px;
+  min-height: 50px;
+
+  font-size: 18px;
+
+  border: 1px solid transparent;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
+
+  transition: 0.2s ease transform;
+}
+
+button:hover {
+  box-shadow: 0 4px 8px rgb(0 0 0 / 50%);
+}
+
+form button:focus-visible {
+  outline: 2px solid var(--tertiary-color);
+  outline-offset: 1px;
+}
+
+form button:disabled {
+  color: var(--tertiary-color);
+  background-color: rgb(173 216 230 / 50%);
+}
+
+form button:active:not(:disabled),
+.modal .modal-btn:active {
+  transform: translateY(-2px);
+}
+
+form input {
+  width: 80%;
+  height: 25px;
+  padding: 10px 15px;
+
+  font-size: 18px;
+
+  border-color: transparent;
+  border-bottom: 1px solid var(--tertiary-color);
+}
+
+input:focus {
+  border-color: transparent;
+  outline: 2px solid var(--main-color);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal.active .message {
+  animation: showModal 0.5s ease;
+}
+
+.modal .message {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: min(400px, 80vw);
+  min-height: 200px;
+  padding: 5px 10px;
+
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+
+  animation: hideModal 0.5s ease;
+}
+
+.modal .message .close-btn::before {
+  content: '';
+
+  position: absolute;
+  right: 50%;
+  transform: rotate(-45deg);
+
+  width: 2px;
+  height: 25px;
+
+  background-color: var(--secondary-color);
+}
+
+.modal .message .close-btn {
+  cursor: pointer;
+
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  transform-origin: center;
+
+  width: 25px;
+  height: 25px;
+}
+
+.modal .message .close-btn:focus-visible {
+  outline: 2px solid var(--secondary-color);
+}
+
+.modal .message .close-btn::after {
+  content: '';
+
+  position: absolute;
+  right: 50%;
+  transform: rotate(45deg);
+
+  width: 2px;
+  height: 25px;
+
+  background-color: var(--secondary-color);
+}
+
+.modal .message-text {
+  padding: 10px 15px;
+  font-size: 18px;
+}
+
+.modal .modal-btn {
+  cursor: pointer;
+
+  align-self: end;
+
+  margin: 15px;
+
+  border-color: transparent;
+  border-radius: 5px;
+
+  transition: 0.3s ease translate;
+}
+
+.modal .modal-btn:focus-visible {
+  outline: 2px solid rgb(0 0 0);
+  outline-offset: 1px;
+}
+
+.loader {
+  display: inline-block;
+
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+
+  border-top: 3px solid var(--secondary-color);
+  border-right: 3px solid transparent;
+  border-radius: 50%;
+
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes showModal {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
